@@ -45,9 +45,7 @@ generate/files      += $(patsubst $(OSS_HOME)/api/kat/%.proto,               $(O
 generate/files      += $(patsubst $(OSS_HOME)/api/kat/%.proto,               $(OSS_HOME)/tools/sandbox/grpc_web/%_grpc_web_pb.js , $(shell find $(OSS_HOME)/api/kat/              -name '*.proto')) # XXX: There are other files in this dir
 # Whole directories with one rule for the whole directory
 generate/files      += $(OSS_HOME)/api/envoy/
-generate/files      += $(OSS_HOME)/api/pb/
 generate/files      += $(OSS_HOME)/pkg/api/envoy/
-generate/files      += $(OSS_HOME)/pkg/api/pb/
 generate/files      += $(OSS_HOME)/pkg/envoy-control-plane/
 # Individual files: Misc
 generate/files      += $(OSS_HOME)/docker/test-ratelimit/ratelimit.proto
@@ -83,7 +81,7 @@ generate:
 # This (generating specific targets early, then having a separate `_generate`) is a hack.  Because the
 # full value of $(generate/files) is based on the listing of files in $(OSS_HOME)/api/, we need to
 # make sure that those directories are fully populated before we evaluate the full $(generate/files).
-	$(MAKE) $(OSS_HOME)/api/envoy $(OSS_HOME)/api/pb
+	$(MAKE) $(OSS_HOME)/api/envoy
 	$(MAKE) _generate
 _generate:
 	@echo '$(MAKE) $$(generate/files)'; $(MAKE) $(patsubst %/,%,$(generate/files))
