@@ -95,9 +95,6 @@ jobs:
       matrix:
         test:
           - integration
-          - kat-envoy2-ah
-          - kat-envoy2-ip
-          - kat-envoy2-qz
           - kat-envoy3-ah
           - kat-envoy3-ip
           - kat-envoy3-qz
