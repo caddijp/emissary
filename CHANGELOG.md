@@ -101,8 +101,8 @@ Please see the [Envoy documentation](https://www.envoyproxy.io/docs/envoy/latest
   have been removed. Only the Envoy V3 API is supported (this has been the default since
   Emissary-ingress v1.14.0).
 
-- Feature: A new field `body_raw_bytes` has been added to `AuthService.spec.include_body` to allow
-  sending request bodies containing binary data to an `AuthService`.
+- Feature: A new field `as_bytes` has been added to `AuthService.spec.include_body` to allow sending
+  request bodies containing binary data to an `AuthService`.
 
 [3906]: https://github.com/emissary-ingress/emissary/issues/3906
 
